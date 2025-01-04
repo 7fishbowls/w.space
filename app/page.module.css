@@ -8,6 +8,7 @@
 }
 .main p {
   font-size: 6.5em;
+  font-family: "Circular", sans-serif;
 }
 @media screen and (max-width: 600px) {
   .main p {
@@ -18,4 +19,8 @@
   .main p {
     font-size: 3em;
   }
+}
+.main h4 {
+  position: absolute;
+  bottom: 45px;
 }
