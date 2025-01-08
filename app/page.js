@@ -1,13 +1,33 @@
 import styles from "./page.module.css";
-import { FaAngleDown } from "react-icons/fa6";
+import dynamic from "next/dynamic";
+
+const FaArrowRightShort = dynamic(() =>
+  import("react-icons/hi2").then((mod) => mod.HiArrowSmallRight)
+);
+const MdOutlineArrowOutward = dynamic(() =>
+  import("react-icons/md").then((mod) => mod.MdOutlineArrowOutward)
+);
 
 export default function Home() {
   return (
     <section className={styles.main}>
+      <header>
+        <h2>
+          By{" "}
+          <a href="/">
+            Shaik Ali{" "}
+            <MdOutlineArrowOutward
+              style={{ transform: "translateY(2px)", marginLeft: "0px" }}
+            />
+          </a>
+        </h2>
+      </header>
       <p>W.SPACE</p>
-      <h4>
-        <FaAngleDown size={30} />
-      </h4>
+      <div className={styles.right}>
+        <h4>
+          <FaArrowRightShort size={25} />
+        </h4>
+      </div>
     </section>
   );
 }
