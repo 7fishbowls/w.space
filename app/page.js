@@ -12,6 +12,7 @@ export default function Home() {
   return (
     <section className={styles.main}>
       <header>
+        <h3>#</h3>
         <h2>
           By{" "}
           <a href="/">
@@ -22,7 +23,7 @@ export default function Home() {
           </a>
         </h2>
       </header>
-      <p>W.SPACE</p>
+      <p className={styles.main_text}>W.SPACE</p>
       <div className={styles.right}>
         <h4>
           <FaArrowRightShort size={25} />

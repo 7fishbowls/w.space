@@ -6,13 +6,14 @@
   background: #eee;
   color: #0e0e0e;
 }
-.main p {
+.main p.main_text {
   font-size: 6.5em;
   font-family: "Circular", sans-serif;
 }
 .main .right {
   position: absolute;
   bottom: 45px;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,29 +22,33 @@
 .main .right h4 {
   width: 50px;
   height: 50px;
-  background: #ddd;
+  background: #0e0e0e;
   display: grid;
   place-items: center;
-  color: #0e0e0e;
+  color: #eee;
 }
 .main header {
   position: fixed;
   top: 35px;
   right: 35px;
   font-size: 0.7em;
-  color: grey;
+  color: rgb(99, 99, 99);
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 .main header a {
-  color: grey;
+  color: rgb(99, 99, 99);
   text-decoration: none;
 }
+
 @media screen and (max-width: 600px) {
-  .main p {
+  .main p.main_text {
     font-size: 4em;
   }
 }
 @media screen and (max-width: 330px) {
-  .main p {
+  .main p.main_text {
     font-size: 3em;
   }
 }
