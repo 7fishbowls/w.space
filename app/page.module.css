@@ -3,8 +3,7 @@
   grid-template-columns: 1fr;
   display: grid;
   place-items: center;
-  background: #eee;
-  color: #0e0e0e;
+  color: #ddd;
 }
 .main p.main_text {
   font-size: 6.5em;
@@ -20,12 +19,14 @@
   justify-content: center;
 }
 .main .right h4 {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  border: 1px solid #4e4e4e;
+  border-radius: 50%;
+  height: 60px;
   background: #0e0e0e;
   display: grid;
   place-items: center;
-  color: #eee;
+  color: #ddd;
 }
 .main header {
   position: fixed;
