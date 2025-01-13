@@ -2,7 +2,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 
 const GeneralSans = localFont({
-  src:"./general_sans.otf",
+  src:"./fonts/general_sans.otf",
   display:"swap"
 });
 

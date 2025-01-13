@@ -3,10 +3,9 @@ import dynamic from "next/dynamic";
 import localFont from "next/font/local";
 
 const Circular = localFont({
-  src:"./title_font.otf",
-  variable:"--circular-sfont",
+  src:"./fonts/title_font.otf",
+  display:"swap",
 });
-
 
 const FaArrowRightShort = dynamic(() =>
   import("react-icons/hi2").then((mod) => mod.HiArrowSmallRight)
