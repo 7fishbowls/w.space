@@ -6,6 +6,11 @@ const GeneralSans = localFont({
   display:"swap"
 });
 
+export const metadata = {
+  title:"W.SPACE",
+  description:"A website to explore/upload your space researches."
+}
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

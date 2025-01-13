@@ -19,8 +19,8 @@ export default function Home() {
   return (
     <section className={styles.main}>
       <header>
-        <h3>#</h3>
-        <h2>
+        <h2>#</h2>
+        <h3>
           By{" "}
           <a href="/">
             Shaik Ali{" "}
@@ -28,14 +28,14 @@ export default function Home() {
               style={{ transform: "translateY(2px)", marginLeft: "0px" }}
             />
           </a>
-        </h2>
+        </h3>
       </header>
       <div className={Circular.className}>
         <p className={styles.main_text}>W.SPACE</p>
       </div>
       <div className={styles.right}>
         <h4>
-          <FaArrowRightShort size={25} />
+          <FaArrowRightShort size={25} aria-label="GO" />
         </h4>
       </div>
     </section>
