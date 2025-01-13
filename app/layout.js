@@ -1,10 +1,10 @@
 import "./globals.css";
-import localFont from "next/font/local";
+import { Inter } from 'next/font/google'
 
-const GeneralSans = localFont({
-  src:"./fonts/general_sans.otf",
-  display:"swap"
-});
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export const metadata = {
   title:"W.SPACE",
@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={GeneralSans.className}>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
