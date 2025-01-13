@@ -1,5 +1,12 @@
 import styles from "./page.module.css";
 import dynamic from "next/dynamic";
+import localFont from "next/font/local";
+
+const Circular = localFont({
+  src:"./title_font.otf",
+  variable:"--circular-sfont",
+});
+
 
 const FaArrowRightShort = dynamic(() =>
   import("react-icons/hi2").then((mod) => mod.HiArrowSmallRight)
@@ -23,7 +30,9 @@ export default function Home() {
           </a>
         </h2>
       </header>
-      <p className={styles.main_text}>W.SPACE</p>
+      <div className={Circular.className}>
+        <p className={styles.main_text}>W.SPACE</p>
+      </div>
       <div className={styles.right}>
         <h4>
           <FaArrowRightShort size={25} />
