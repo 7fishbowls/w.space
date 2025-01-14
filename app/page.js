@@ -3,8 +3,13 @@ import dynamic from "next/dynamic";
 import localFont from "next/font/local";
 
 const Circular = localFont({
-  src:"./fonts/title_font.otf",
-  display:"swap",
+  src: "./fonts/title_font.otf",
+  display: "swap",
+});
+
+const general_sans = localFont({
+  src: "./fonts/general_sans.otf",
+  display: "swap",
 });
 
 const FaArrowRightShort = dynamic(() =>
@@ -19,7 +24,7 @@ export default function Home() {
     <section className={styles.main}>
       <header>
         <h2>#</h2>
-        <h3>
+        <h3 className={general_sans.className}>
           By{" "}
           <a href="/">
             Shaik Ali{" "}

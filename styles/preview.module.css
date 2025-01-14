@@ -43,10 +43,6 @@
   height: 100vh;
   width: 400px;
 }
-
-.main .elements_box section:nth-child(1) {
-  border-bottom: 1px solid #4a4a4a;
-}
 @media screen and (max-width: 900px) {
   .main {
     grid-template-columns: 1fr 25vw;
@@ -67,6 +63,7 @@
   color: #4a4a4a;
   border: 1px solid #3a3a3a;
   font-size: 2em;
+  background: #111;
   cursor: pointer;
 }
 .main .elements_box .text_based h1:hover,
@@ -87,5 +84,5 @@
   display: grid;
   color: #fff;
   place-items: center;
-  background: #006fff;
+  background: #111;
 }
