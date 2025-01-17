@@ -13,7 +13,7 @@
   margin: 20px;
   font-size: 1.1em;
   font-weight: 400;
-  color: #ddd;
+  color: #7e7e7e;
   line-height: 1.5;
 }
 .main .preview .element {
@@ -25,8 +25,11 @@
   min-width: 50px;
   text-align: center;
   background: #111;
-  padding-top: 20px;
   font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 20px;
 }
 .main .preview .element header {
   padding: 20px;
@@ -85,4 +88,10 @@
   color: #fff;
   place-items: center;
   background: #111;
+  border: 1px solid #3a3a3a;
+  border-bottom: 2px solid #3a3a3a;
+  border-right: 1px solid #3a3a3a;
+}
+.main .elements_box .visual_based span:hover {
+  background: #006fff;
 }

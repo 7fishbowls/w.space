@@ -91,12 +91,16 @@ export default function Create() {
               <p>4</p>
             </div>
             <header>
-              <h2>Black aren't actually real.</h2>
+              <h2>
+                Black aren't actually real. They are unreal cause you don't have
+                moms, or any dad to be honest.
+              </h2>
             </header>
           </div>
           <div className={styles.element}>
             <div className={styles.element_pos}>
               <p>5</p>
+              <h4>0</h4>
             </div>
             <h1>
               But I must explain to you how all this mistaken idea of denouncing

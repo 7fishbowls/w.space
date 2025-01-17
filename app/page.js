@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
 import dynamic from "next/dynamic";
 import localFont from "next/font/local";
+import Link from "next/link";
 
 const Circular = localFont({
   src: "./fonts/title_font.otf",
@@ -38,9 +39,11 @@ export default function Home() {
         <p className={styles.main_text}>W.SPACE</p>
       </div>
       <div className={styles.right}>
-        <h4>
-          <FaArrowRightShort size={25} aria-label="GO" />
-        </h4>
+        <Link href="/create" style={{ textDecoration: "none", color: "#ddd" }}>
+          <h4>
+            <FaArrowRightShort size={25} aria-label="GO" />
+          </h4>
+        </Link>
       </div>
     </section>
   );
