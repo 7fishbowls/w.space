@@ -12,6 +12,7 @@ export default function Element({
 }) {
   const [editable, setEditable] = useState(false);
   const [value_, setValue] = useState(value);
+  const [isImage, setIsImage] = useState(type === "image" ? true : false);
   const inputFeild = useRef(null);
 
   const handleClick = () => {
@@ -64,13 +65,17 @@ export default function Element({
           <h2>{value}</h2>
         </header>
       )}
-      {type === "link" && (
-        <a href={value} target="_blank">
-          {value}
-        </a>
+      {type === "link" && !editable && (
+        <h1 onClick={handleClick} style={{ textDecoration: "underline" }}>
+          {value.split(" ")[0]}
+        </h1>
       )}
       {type === "highlight" && !editable && (
-        <h1 className={styles.highlight} onClick={handleClick}>
+        <h1
+          className={styles.highlight}
+          style={{ color: "#0e0e0e" }}
+          onClick={handleClick}
+        >
           {value}
         </h1>
       )}
@@ -85,9 +90,11 @@ export default function Element({
               handleSave();
             }
           }}
+          onBlur={() => setEditable(false)}
           ref={inputFeild}
         />
       )}
+      {type === "image" && isImage && <h1>Loading....</h1>}
       {type === "image" && (
         <Image
           onClick={handleClick}
@@ -96,6 +103,7 @@ export default function Element({
           alt="Your internet sucks or you entered invalid url."
           width={1000}
           height={600}
+          onLoad={() => setIsImage(false)}
         />
       )}
     </div>
