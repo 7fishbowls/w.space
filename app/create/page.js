@@ -25,8 +25,6 @@ export default function Create() {
     ]);
   };
 
-  console.log(elements_);
-
   const addLink = () => {
     setElements([
       ...elements_,
@@ -54,7 +52,14 @@ export default function Create() {
   };
 
   const addImage = () => {
-    setElements([...elements_, { type: "image", value: "https" }]);
+    setElements([
+      ...elements_,
+      {
+        type: "image",
+        value:
+          "https://cdn.esahubble.org/archives/images/publicationjpg/heic0910e.jpg",
+      },
+    ]);
   };
   return (
     <>
@@ -79,31 +84,76 @@ export default function Create() {
         </section>
         <section className={styles.elements_box}>
           <section className={styles.text_based}>
-            <h1 onClick={addHeading}>
+            <h1
+              onClick={addHeading}
+              style={{
+                animation: "animate_elem .6s ease forwards",
+                animationDelay: "0.1",
+              }}
+            >
               <FaHeading />
             </h1>
-            <h1 onClick={addPara}>
+            <h1
+              onClick={addPara}
+              style={{
+                animation: "animate_elem .6s ease forwards",
+                animationDelay: "0.3s",
+              }}
+            >
               <BsTextParagraph />
             </h1>
-            <h1 onClick={addLink}>
+            <h1
+              onClick={addLink}
+              style={{
+                animation: "animate_elem .6s ease forwards",
+                animationDelay: "0.2s",
+              }}
+            >
               <FaLink />
             </h1>
-            <h1 onClick={addHighlight}>
+            <h1
+              onClick={addHighlight}
+              style={{
+                animation: "animate_elem .6s ease forwards",
+                animationDelay: "0.4s",
+              }}
+            >
               <FaHighlighter />
             </h1>
           </section>
           <section className={styles.visual_based}>
             <section className={styles.vb_btn}>
-              <h1 onClick={addImage}>
+              <h1
+                onClick={addImage}
+                style={{
+                  animation: "animate_elem .6s ease forwards",
+                  animationDelay: "0.3s",
+                }}
+              >
                 <FaImage />
               </h1>
-              <h1>
+              <h1
+                style={{
+                  animation: "animate_elem .6s ease forwards",
+                  animationDelay: "0.5s",
+                }}
+              >
                 <GoGraph />
               </h1>
-              <h1>
+              <h1
+                style={{
+                  animation: "animate_elem .6s ease forwards",
+                  animationDelay: "0.4s",
+                }}
+              >
                 <FaSave />
               </h1>
-              <h1>
+              <h1
+                style={{
+                  animation: "animate_elem .6s ease forwards",
+                  animationDelay: "0.6s",
+                }}
+              >
                 <FaArrowRightLong />
               </h1>
             </section>

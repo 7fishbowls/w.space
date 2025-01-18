@@ -89,12 +89,13 @@ export default function Element({
         />
       )}
       {type === "image" && (
-        <img
+        <Image
+          onClick={handleClick}
           className={styles.image_}
-          src={
-            "https://cdn.esahubble.org/archives/images/publicationjpg/heic0910e.jpg"
-          }
-          alt="Your internet sucks!"
+          src={value}
+          alt="Your internet sucks or you entered invalid url."
+          width={1000}
+          height={600}
         />
       )}
     </div>
