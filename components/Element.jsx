@@ -14,12 +14,19 @@ export default function Element({
   const [value_, setValue] = useState(value);
   const [isImage, setIsImage] = useState(type === "image" ? true : false);
   const inputFeild = useRef(null);
+  const height_ = type === "para" ? "300px" : "100%";
 
   const handleClick = () => {
     setEditable(true);
   };
 
   const handleInput = (e) => {
+    if (!e.target.value) {
+      const newArray = [...elements].filter((_, index) => index !== id);
+      setElements(newArray);
+      return;
+    }
+
     setValue(e.target.value);
     const newArray = [...elements];
     newArray[id].value = e.target.value;
@@ -81,17 +88,20 @@ export default function Element({
       )}
       {editable && (
         <textarea
-          value={value}
+          value={value.trimStart()}
           className={styles.edit_area}
           onChange={(e) => handleInput(e)}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               e.preventDefault();
               handleSave();
+            } else if (e.key === " " && (type === "image" || type === "link")) {
+              e.preventDefault();
             }
           }}
           onBlur={() => setEditable(false)}
           ref={inputFeild}
+          style={{ height: height_ }}
         />
       )}
       {type === "image" && isImage && <h1>Loading....</h1>}
@@ -100,7 +110,7 @@ export default function Element({
           onClick={handleClick}
           className={styles.image_}
           src={value}
-          alt="Your internet sucks or you entered invalid url."
+          alt="Fix your internet or stop entering broken image URLs!"
           width={1000}
           height={600}
           onLoad={() => setIsImage(false)}

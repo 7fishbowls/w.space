@@ -78,9 +78,7 @@ export default function Create() {
               />
             );
           })}
-          {elements_.length === 0 && (
-            <p className={styles.no_elem}>No element, add one.</p>
-          )}
+          {elements_.length === 0 && <p className={styles.no_elem}>空</p>}
         </section>
         <section className={styles.elements_box}>
           <section className={styles.text_based}>
