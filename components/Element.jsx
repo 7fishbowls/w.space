@@ -14,18 +14,18 @@ export default function Element({
   const [value_, setValue] = useState(value);
   const [isImage, setIsImage] = useState(type === "image" ? true : false);
   const inputFeild = useRef(null);
-  const height_ = type === "para" ? "300px" : "100%";
+  const width_ = type === "image" ? "25vw" : "100%";
 
   const handleClick = () => {
     setEditable(true);
   };
 
   const handleInput = (e) => {
-    if (!e.target.value) {
-      const newArray = [...elements].filter((_, index) => index !== id);
-      setElements(newArray);
-      return;
-    }
+    // if (!e.target.value) {
+    //   const newArray = [...elements].filter((_, index) => index !== id);
+    //   setElements(newArray);
+    //   return;
+    // }
 
     setValue(e.target.value);
     const newArray = [...elements];
@@ -101,7 +101,7 @@ export default function Element({
           }}
           onBlur={() => setEditable(false)}
           ref={inputFeild}
-          style={{ height: height_ }}
+          style={{width:width_}}
         />
       )}
       {type === "image" && isImage && <h1>Loading....</h1>}
@@ -112,7 +112,7 @@ export default function Element({
           src={value}
           alt="Fix your internet or stop entering broken image URLs!"
           width={1000}
-          height={600}
+          height={1000}
           onLoad={() => setIsImage(false)}
         />
       )}

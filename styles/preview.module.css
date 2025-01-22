@@ -7,8 +7,13 @@
 .main .preview {
   border-right: 1px solid #4a4a4a;
   width: 100%;
-  min-height: 100vh;
+  min-height: 101vh;
   position: relative;
+}
+.main .preview .element {
+  display: flex;
+  opacity: 0;
+  animation: animate 0.5s ease forwards;
 }
 .main .preview .element h1 {
   margin: 20px;
@@ -23,11 +28,6 @@
   font-weight: 400;
   color: #7e7e7e;
   line-height: 1.5;
-}
-.main .preview .element {
-  display: flex;
-  opacity: 0;
-  animation: animate 0.5s ease forwards;
 }
 @keyframes animate {
   from {
@@ -145,12 +145,11 @@
   transform: translate(-50%, -50%);
   font-size: 5.2em;
   color: grey;
-  text-shadow: 0 0 400px #353535;
 }
 .edit_area {
-  width: 100%;
   resize: none;
   margin: 20px;
+  min-width:300px;
   background: #0e0e0e;
   color: #ddd;
   padding: 10px;
@@ -171,8 +170,12 @@
   background: red;
 }
 .image_ {
-  margin: 20px;
   width: 100%;
   height: 100%;
   object-fit: contain;
+  margin: 20px;
+}
+.textarea_and_elem{
+display: flex;
+width: 100%;
 }
