@@ -1,0 +1,49 @@
+.parent {
+  padding: 30px;
+}
+.parent header {
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
+  grid-template-rows: 50px;
+}
+
+.parent header h2 {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4em;
+}
+.parent header input {
+  border: 1px solid #3a3a3a;
+  background: none;
+  color: grey;
+  padding: 15px;
+  font-size: 1em;
+  outline: none;
+}
+.parent main .first_row {
+  grid-template-columns: 30vw 1fr;
+  display: grid;
+}
+
+.parent main .second_row {
+  display: grid;
+  grid-template-columns: 30vw 1fr 1fr;
+}
+.parent main .first_row section,
+.parent main .second_row section {
+  border: 1px solid #3a3a3a;
+  height: calc(50vh - 30px);
+  display: grid;
+  place-items: center;
+  color: #ddd;
+}
+@media screen and (max-width: 768px) {
+  .parent main .first_row {
+    grid-template-columns: 1fr;
+  }
+  .parent main .second_row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
