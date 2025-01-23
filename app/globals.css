@@ -11,20 +11,3 @@
 body {
   background: #000;
 }
-
-@keyframes animate_elem {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-::-webkit-scrollbar {
-  display: none; /* Chrome, Edge, and Safari */
-}
-
-body {
-  -ms-overflow-style: none; /* Internet Explorer and Edge */
-  scrollbar-width: none; /* Firefox */
-}
