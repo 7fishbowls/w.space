@@ -1,12 +1,14 @@
 .create_section {
   display: grid;
-  grid-template-columns: 1fr 35vw;
+  grid-template-columns: 1fr 32vw;
   color: #fff;
   min-height: 100vh;
 }
 .create_section h2 {
   padding: 25px;
   font-size: 1.4em;
+  line-height: 1.6;
+  color: #ddd;
 }
 .create_section .elements .img_ {
   object-fit: cover;
@@ -36,11 +38,13 @@
   top: 0;
   overflow-y: auto;
   max-height: 100vh;
-  min-width: 35vw;
+  width: 32vw;
 }
 .create_section .add_elements .edit_section {
   border-left: 1px solid #3a3a3a;
   padding: 25px;
+  height: 100%;
+  min-height: 460px;
 }
 .create_section .add_elements .buttons {
   display: grid;
@@ -64,9 +68,9 @@
   border-bottom: 1px solid #3a3a3a;
 }
 .create_section .add_elements .buttons button:hover {
-  border: 1px solid #fff;
-  background: #fff;
-  color: #0e0e0e;
+  border: 1px solid #006fff;
+  background: #006fff;
+  color: #eee;
 }
 .create_section .add_elements .edit_area {
   width: 100%;
@@ -105,4 +109,13 @@
 .create_section .add_elements .changes_btn button:nth-child(2) {
   background: #006fff;
   border: 1px solid #006fff;
+}
+
+.create_section .add_elements .changes_btn button:first-child:hover {
+  background: red;
+  border: 1px solid red;
+}
+.create_section .add_elements .changes_btn button:nth-child(2):hover {
+  background: #006effb3;
+  border: 1px solid #006fffb3;
 }

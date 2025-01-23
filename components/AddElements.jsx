@@ -13,6 +13,7 @@ export default function AddElements({
   elements_,
   elementIndex,
   setElementIndex,
+  editElement,
 }) {
   const [elementValue, setElementValue] = useState(
     elementIndex >= 0 ? elements_[elementIndex].value : -1
@@ -62,7 +63,8 @@ export default function AddElements({
         ...prev,
         {
           type: "image",
-          value: "https://blaze-domination.xyz",
+          value:
+            "https://cdn.esahubble.org/archives/images/screen/heic0206c.jpg",
         },
       ];
     });
@@ -118,15 +120,24 @@ export default function AddElements({
           <FaImage size={35} />
         </button>
       </div>
-      <div className={styles.edit_section}>
-        <p>
-          Edit {elementIndex >= 0 ? elements_[elementIndex].type : "nothing"}
+      <div className={styles.edit_section} ref={editElement}>
+        <p style={{ color: "grey", lineHeight: "1.5" }}>
+          Edit {elementIndex >= 0 ? elements_[elementIndex].type : "*"}
+          {elementIndex >= 0 && elements_[elementIndex].type === "image"
+            ? " : currently supported image links: ESAHubble, Nasa and ImgDB"
+            : ""}
         </p>
 
         <textarea
           className={styles.edit_area}
           placeholder="Once upon a time..."
-          value={elementIndex >= 0 ? elementValue : "Nothing"}
+          value={
+            elementIndex >= 0
+              ? elementValue
+              : elementIndex === -404
+              ? "Invalid Image Link"
+              : "*"
+          }
           disabled={!(elementIndex >= 0)}
           onChange={(e) => setElementValue(e.target.value)}
         ></textarea>

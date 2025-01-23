@@ -2,17 +2,20 @@
 import AddElements from "@/components/AddElements";
 import Elements from "@/components/Elements";
 import styles from "@/styles/Create.module.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function Create() {
   const [elements_, setElements] = useState([]);
   const [elementIndex, setElementIndex] = useState(-1);
+  const editElement = useRef(null);
   return (
     <section className={styles.create_section}>
       <Elements
         styles={styles}
         elements_={elements_}
         setElementIndex={setElementIndex}
+        editElement={editElement}
+        setElements={setElements}
       />
       <AddElements
         styles={styles}
@@ -20,6 +23,7 @@ export default function Create() {
         elements_={elements_}
         elementIndex={elementIndex}
         setElementIndex={setElementIndex}
+        editElement={editElement}
       />
     </section>
   );
