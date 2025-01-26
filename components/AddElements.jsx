@@ -120,7 +120,11 @@ export default function AddElements({
           <FaImage size={35} />
         </button>
       </div>
-      <div className={styles.edit_section} ref={editElement}>
+      <div
+        className={styles.edit_section}
+        ref={editElement}
+        style={{ opacity: elementIndex >= 0 ? "1" : "0.2" }}
+      >
         <p style={{ color: "grey", lineHeight: "1.5" }}>
           Edit {elementIndex >= 0 ? elements_[elementIndex].type : "*"}
           {elementIndex >= 0 && elements_[elementIndex].type === "image"

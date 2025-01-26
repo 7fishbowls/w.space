@@ -39,7 +39,7 @@ export default function Home() {
         <p className={styles.main_text}>W.SPACE</p>
       </div>
       <div className={styles.right}>
-        <Link href="/create" style={{ textDecoration: "none", color: "#ddd" }}>
+        <Link href="/explore" style={{ textDecoration: "none", color: "#ddd" }}>
           <h4>
             <FaArrowRightShort size={25} aria-label="GO" />
           </h4>

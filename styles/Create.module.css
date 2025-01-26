@@ -85,6 +85,9 @@
   line-height: 1.7;
   color: grey;
 }
+.create_section .add_elements .edit_area:focus {
+  border: 1px solid #ddd;
+}
 .create_section .add_elements .changes_btn {
   display: grid;
   grid-template-columns: 1fr 1fr;
