@@ -1,62 +1,38 @@
-import Menu from "@/components/Menu";
+import SearchBox from "@/components/SearchBox";
 import styles from "@/styles/Explore.module.css";
 import localFont from "next/font/local";
-import { BiSearchAlt } from "react-icons/bi";
-import { BsPlusLg } from "react-icons/bs";
-import { IoPencil } from "react-icons/io5";
-import { FaUserLarge } from "react-icons/fa6";
+import { FaAsterisk } from "react-icons/fa6";
 
 const Circular = localFont({
   src: "../fonts/title_font.otf",
   display: "swap",
 });
 
-const General_sans = localFont({
-  src: "../fonts/general_sans.otf",
+const Aeonik = localFont({
+  src: "../fonts/aeonik.otf",
   display: "swap",
 });
 
 export default function Explore() {
   return (
-    <main className={styles.parent}>
+    <section className={styles.explore}>
       <section className={styles.col_1}>
-        <header className={styles.explore_header}>
-          <h2 className={Circular.className}>W.SPACE</h2>
+        <header>
+          <h2 className={Circular.className}>W.</h2>
+          <SearchBox styles={styles} />
         </header>
-        <section className={styles.menu_container}>
-          <Menu styles={styles}>
-            <BsPlusLg size={30} />
-          </Menu>
-          <Menu styles={styles}>
-            <IoPencil size={30} />
-          </Menu>
-          <Menu styles={styles}>
-            <FaUserLarge size={30} />
-          </Menu>
+        <p>Hello worlds</p>
+      </section>
+      <section className={`${styles.col_2} ${Aeonik.className}`}>
+        <section className={styles.row_1}>
+          <section className={styles.create}></section>
+          <div className={styles.special}></div>
+        </section>
+        <section className={styles.row_2}>
+          <div className={styles.special}></div>
+          <section className={styles.top_researchers}></section>
         </section>
       </section>
-      <section className={styles.col_2}>
-        <header className={styles.search_bar}>
-          <input type="text" placeholder="eg., Black Holes" />
-          <button>
-            <BiSearchAlt />
-          </button>
-        </header>
-        <section className={styles.top_researches}>
-          <section className={styles.research}></section>
-          <section className={styles.research}></section>
-          <section className={styles.research}></section>
-          <section className={styles.research}></section>
-          <section className={styles.research}></section>
-          <section className={styles.research}></section>
-          <section className={styles.research}></section>
-          <section className={styles.research}></section>
-          <section className={styles.research}></section>
-          <section className={styles.research}></section>
-          <section className={styles.research}></section>
-          <section className={styles.research}></section>
-        </section>
-      </section>
-    </main>
+    </section>
   );
 }

@@ -1,150 +1,92 @@
-.parent {
-  background: #000;
-  min-height: 100vh;
+.explore {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-auto-flow: dense;
-}
-
-.explore_header h2 {
-  font-size: 10vw;
-  padding: 15px;
-  padding-top: 0px;
-  padding-bottom: 0;
-  border-bottom: 1px solid #3a3a3a;
-  text-align: center;
   color: #ddd;
 }
-
-.parent .col_1 {
-  border-right: 1px solid #3d3d3d;
-}
-.parent .col_2 {
-  max-height: 100vh;
-  overflow-y: auto;
-}
-
-.parent .col_2 .search_bar {
-  padding: 30px;
-  display: grid;
-  grid-template-columns: 1fr 50px;
-}
-.parent .col_2 .search_bar input {
-  padding: 10px;
-  width: 100%;
-  outline: none;
-  border: 1px solid #3d3d3d;
-  font-size: 0.9em;
-  color: #ddd;
+.explore .col_1 {
   background: #0e0e0e;
+  color: #fff;
+  min-height: 100vh;
+  font-size: 1.2em;
+}
+.explore .col_1 header {
+  padding: 35px;
+  align-items: center;
+  justify-content: center;
+}
+.explore .col_1 header input {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #494949;
+  padding: 10px;
+  color: grey;
+  font-size: 15px;
+  outline: none;
   padding-left: 15px;
 }
-.parent .col_2 .search_bar input:focus {
-  border: 1px solid #8a8a8a;
-}
-.parent .col_2 .search_bar button {
-  background: #0e0e0e;
-  padding: 10px;
-  color: #ddd;
-  border: 1px solid #3d3d3d;
-  border-left: none;
-  font-size: 1.3em;
+.explore .col_2 {
+  padding: 35px;
+  background: #000000;
+  min-height: 100vh;
   display: grid;
-  cursor: pointer;
+  gap: 35px;
+}
+.explore .col_2 .row_1 {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 35px;
+}
+.explore .col_2 .row_2 {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 35px;
+}
+.explore .col_2 .row_1 section {
+  background: #0e0e0e;
+}
+.explore .col_2 .row_2 section {
+  background: #0e0e0e;
+}
+.explore .col_2 .special {
+  display: grid;
   place-items: center;
-}
-.parent .col_2 .search_bar button:hover {
-  background: #006fff;
-}
-.parent .col_2 .top_researches {
-  padding: 30px;
-  color: #ddd;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding-top: 0;
-  gap: 30px;
-  grid-template-rows: repeat(4, 270px);
-}
-.parent .col_2 .top_researches .research {
-  border: 1px solid #3a3a3a;
   background: #0e0e0e;
-  padding: 20px;
 }
+
 @media screen and (max-width: 768px) {
-  .explore_header h2 {
-    font-size: 4em;
-    padding: 15px;
-  }
-  .parent {
+  .explore {
     grid-template-columns: 1fr;
-    display: flex;
-    flex-direction: column;
-  }
-  .parent .col_1 {
-    border-right: none;
-  }
-  .parent .col_2 .search_bar {
-    padding: 20px;
-  }
-  .parent .col_2 .top_researches {
-    grid-template-columns: 1fr;
-    padding: 20px;
-    grid-template-rows: repeat(12, 250px);
-  }
-  .parent .col_2 {
-    overflow-y: visible;
-    max-height: none;
   }
 }
-.menu_container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  color: #ddd;
-  padding: 30px;
-}
-.menu {
-  border: 1px solid #3a3a3a;
-  border-right: none;
-  height: 30vh;
-  display: grid;
-  place-items: center;
-  transition: 0.2s;
-  position: relative;
-  overflow: hidden;
-}
-.menu:hover {
-  background: #ddd;
-}
-.menu .click {
-  position: absolute;
+.search_box {
   width: 100%;
-  height: 100%;
+  display: flex;
+  margin-top: 20px;
+  position: relative;
+  flex-direction: column;
+}
+.results {
+  padding: 20px;
+  border: 1px solid #494949;
   display: grid;
-  place-items: center;
+  position: absolute;
+  top: 38px;
+  width: 100%;
+  left: 0;
+  z-index: 10000;
+  background: #0e0e0e;
 }
-.menu_container a {
-  text-decoration: none;
-  color: #ddd;
-  border-bottom: none;
+.results p {
+  padding: 15px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
 }
-.menu_container .menu:hover a {
-  color: #0e0e0e;
+.results p:hover {
+  background: rgb(22, 22, 22);
+  border: 1px solid #3a3a3a;
 }
-.menu_container .menu:last-child {
-  border-right: 1px solid #3a3a3a;
-}
-.menu_container .menu h2 {
-  font-weight: 100;
-}
-@media screen and (max-width: 550px) {
-  .parent .menu_container {
-    grid-template-columns: 1fr;
-  }
-  .parent .menu_container .menu {
-    border: 1px solid #3a3a3a;
-    border-bottom: none;
-  }
-  .parent .menu_container .menu:last-child {
-    border-bottom: 1px solid #3a3a3a;
-  }
+.no_results {
+  padding: 25px;
 }
