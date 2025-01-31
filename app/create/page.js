@@ -1,30 +1,30 @@
 "use client";
-import AddElements from "@/components/AddElements";
-import Elements from "@/components/Elements";
+
 import styles from "@/styles/Create.module.css";
-import { useRef, useState } from "react";
+import ToolBox from "@/components/ToolBox";
+import { FaAsterisk } from "react-icons/fa6";
+import { useState } from "react";
 
 export default function Create() {
-  const [elements_, setElements] = useState([]);
-  const [elementIndex, setElementIndex] = useState(-1);
-  const editElement = useRef(null);
+  const [elements, setElements] = useState([]);
+  console.log(elements);
   return (
-    <section className={styles.create_section}>
-      <Elements
-        styles={styles}
-        elements_={elements_}
-        setElementIndex={setElementIndex}
-        editElement={editElement}
-        setElements={setElements}
-      />
-      <AddElements
-        styles={styles}
-        setElements={setElements}
-        elements_={elements_}
-        elementIndex={elementIndex}
-        setElementIndex={setElementIndex}
-        editElement={editElement}
-      />
-    </section>
+    <>
+      {elements.length === 0 && (
+        <section className={styles.japanese_text}>
+          <FaAsterisk />
+        </section>
+      )}
+      <section className={styles.elements}>
+        {elements.map((elem, index) =>
+          elem.type === "heading" ? (
+            <h1 key={index}>{elem.content}</h1>
+          ) : elem.type === "paragraph" ? (
+            <p key={index}>{elem.content}</p>
+          ) : null
+        )}
+      </section>
+      <ToolBox setElements={setElements} styles={styles} />
+    </>
   );
 }
