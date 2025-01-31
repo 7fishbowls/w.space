@@ -4,21 +4,26 @@
   color: #ddd;
 }
 .explore .col_1 {
-  background: #0e0e0e;
-  color: #fff;
+  background: #0a0a0a;
+  color: #f8f8f8;
   min-height: 100vh;
+  max-height: 100vh;
+  overflow-y: auto;
   font-size: 1.2em;
+  position: relative;
 }
 .explore .col_1 header {
   padding: 35px;
+  line-height: 1.3;
   align-items: center;
   justify-content: center;
+  color: #f8f8f8;
 }
 .explore .col_1 header input {
   width: 100%;
   background: transparent;
   border: 1px solid #494949;
-  padding: 10px;
+  padding: 12px;
   color: grey;
   font-size: 15px;
   outline: none;
@@ -28,6 +33,7 @@
   padding: 35px;
   background: #000000;
   min-height: 100vh;
+  position: relative;
   display: grid;
   gap: 35px;
 }
@@ -42,51 +48,89 @@
   gap: 35px;
 }
 .explore .col_2 .row_1 section {
-  background: #0e0e0e;
+  background: #0a0a0a;
 }
 .explore .col_2 .row_2 section {
-  background: #0e0e0e;
+  background: #0a0a0a;
 }
 .explore .col_2 .special {
   display: grid;
   place-items: center;
-  background: #0e0e0e;
+  background: #0a0a0a;
 }
 
-@media screen and (max-width: 768px) {
-  .explore {
-    grid-template-columns: 1fr;
-  }
-}
 .search_box {
   width: 100%;
   display: flex;
-  margin-top: 20px;
+  margin-top: 30px;
   position: relative;
   flex-direction: column;
 }
 .results {
-  padding: 20px;
   border: 1px solid #494949;
   display: grid;
   position: absolute;
-  top: 38px;
+  top: 43px;
   width: 100%;
   left: 0;
   z-index: 10000;
-  background: #0e0e0e;
+  background: #0a0a0a;
 }
-.results p {
-  padding: 15px;
-  border: 1px solid transparent;
+.results a {
+  padding: 12px;
   cursor: pointer;
+  text-decoration: none;
+  color: #ddd;
   width: 100%;
-  font-size: 16px;
+  font-size: 17px;
 }
-.results p:hover {
-  background: rgb(22, 22, 22);
-  border: 1px solid #3a3a3a;
+.results a:hover {
+  background: rgb(26, 26, 26);
 }
 .no_results {
-  padding: 25px;
+  padding: 15px;
+  font-size: 16px;
+}
+
+.researches {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 35px;
+  gap: 30px;
+  padding-top: 0;
+}
+.researches .research {
+  background: #0e0e0e;
+  height: 200px;
+}
+@media screen and (max-width: 768px) {
+  .explore {
+    grid-template-columns: 1fr;
+  }
+  .researches {
+    grid-template-columns: 1fr;
+  }
+}
+.tools {
+  position: absolute;
+  bottom: 0;
+  margin: 30px;
+  width: calc(100% - 60px);
+  left: 0;
+  background: #0a0a0a;
+  border: 1px solid #424242;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  font-size: 20px;
+  color: #f8f8f8;
+}
+.tools a {
+  color: #f8f8f8;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+}
+.tools a:hover {
+  background: rgb(61, 61, 61);
 }

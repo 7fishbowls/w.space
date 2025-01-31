@@ -1,15 +1,17 @@
 "use client";
+import Link from "next/link";
 import { useRef, useState } from "react";
 
 export default function SearchBox({ styles }) {
   const keywords = [
-    "black holes",
-    "space",
-    "secrets",
-    "nasa",
-    "billions",
-    "stars",
-    "nebulae",
+    {
+      keyword: "black holes",
+      link: "/create",
+    },
+    {
+      keyword: "nebulae",
+      link: "/",
+    },
   ];
 
   const inputElem = useRef(null);
@@ -19,7 +21,7 @@ export default function SearchBox({ styles }) {
   const handleChange = (e) => {
     setValue(e.target.value);
     const newElements = [...keywords].filter((elem) =>
-      elem.includes(e.target.value.toLowerCase())
+      elem.keyword.includes(e.target.value.toLowerCase())
     );
     setMatchedElements(newElements);
   };
@@ -37,12 +39,16 @@ export default function SearchBox({ styles }) {
         {matchedElements.length > 0 && value && (
           <section className={styles.results}>
             {matchedElements.map((elem, index) => (
-              <p key={index}>{elem}</p>
+              <Link href={elem.link} key={index}>
+                {elem.keyword}
+              </Link>
             ))}
           </section>
         )}
-        {value && matchedElements.length === 0 && (
-          <p className={styles.no_results}>No results found.</p>
+        {matchedElements.length === 0 && value && (
+          <section className={styles.results}>
+            <p className={styles.no_results}>No results found.</p>
+          </section>
         )}
       </section>
     </>
