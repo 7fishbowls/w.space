@@ -3,13 +3,14 @@ import { BsTextParagraph } from "react-icons/bs";
 import { FaLink } from "react-icons/fa";
 import { FaImage } from "react-icons/fa6";
 
-export default function Create({ styles, setElements }) {
+export default function Create({ styles, setElements, hide }) {
   const addHeading = () => {
     setElements((prev) => [
       ...prev,
       { type: "heading", content: "Black holes are actully real." },
     ]);
   };
+
   const addParagraph = () => {
     setElements((prev) => [
       ...prev,
@@ -20,15 +21,25 @@ export default function Create({ styles, setElements }) {
       },
     ]);
   };
+
+  const addLink = () => {
+    setElements((prev) => [
+      ...prev,
+      { type: "link", content: "https://blaze-domination.xyz" },
+    ]);
+  };
   return (
-    <section className={styles.tool_box}>
+    <section
+      className={styles.tool_box}
+      style={{ display: hide ? "none" : "grid" }}
+    >
       <button onClick={addHeading}>
         <FaHeading />
       </button>
       <button onClick={addParagraph}>
         <BsTextParagraph />
       </button>
-      <button>
+      <button onClick={addLink}>
         <FaLink />
       </button>
       <button>

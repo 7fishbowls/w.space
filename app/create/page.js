@@ -3,11 +3,23 @@
 import styles from "@/styles/Create.module.css";
 import ToolBox from "@/components/ToolBox";
 import { FaAsterisk } from "react-icons/fa6";
-import { useState } from "react";
-
+import { useEffect, useRef, useState } from "react";
+import Element from "@/components/Element";
 export default function Create() {
   const [elements, setElements] = useState([]);
-  console.log(elements);
+  const [hide, setHide] = useState(false);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "+") setHide(!hide);
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [hide]);
   return (
     <>
       {elements.length === 0 && (
@@ -15,16 +27,20 @@ export default function Create() {
           <FaAsterisk />
         </section>
       )}
+
       <section className={styles.elements}>
-        {elements.map((elem, index) =>
-          elem.type === "heading" ? (
-            <h1 key={index}>{elem.content}</h1>
-          ) : elem.type === "paragraph" ? (
-            <p key={index}>{elem.content}</p>
-          ) : null
-        )}
+        {elements.map((elem, index) => (
+          <Element
+            styles={styles}
+            element={elem}
+            key={index * 10}
+            id={index}
+            setElements={setElements}
+            elements={elements}
+          />
+        ))}
       </section>
-      <ToolBox setElements={setElements} styles={styles} />
+      <ToolBox setElements={setElements} styles={styles} hide={hide} />
     </>
   );
 }

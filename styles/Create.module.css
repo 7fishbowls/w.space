@@ -4,7 +4,7 @@
   left: 50%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  width: 73vw;
+  width: 75vw;
   max-width: 300px;
   transform: translateX(-50%);
   border-radius: 10px;
@@ -14,12 +14,12 @@
   backdrop-filter: blur(10px);
 }
 .tool_box button {
-  padding: 20px;
+  padding: 15px;
   color: #d8d8d8;
   text-align: center;
   border: 1px solid transparent;
   font-size: 20px;
-  background: transparent;
+  background: #0e0e0e;
   transition: 0.2s;
 }
 .tool_box button:hover {
@@ -43,6 +43,42 @@
     font-size: 0.8em;
   }
 }
+
+.elements {
+  color: #ddd;
+  padding: 25px;
+}
+.elements h1 {
+  color: #dddddd;
+  margin-bottom: 15px;
+  font-size: 23px;
+}
+.elements p {
+  color: #777;
+  line-height: 1.5;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.elements h4 {
+  color: #777;
+  margin-bottom: 15px;
+}
+.link_icon {
+  margin-right: 5px;
+  transform: translateY(2px);
+}
+.edit_input {
+  padding: 20px;
+  width: 100%;
+  background: #0e0e0e;
+  border: 1px solid rgb(51, 51, 51);
+  color: rgb(182, 182, 182);
+  outline: none;
+  font-size: 16px;
+  margin-bottom: 15px;
+  height: 300px;
+  resize: none;
+}
 @media screen and (min-width: 768px) {
   .tool_box {
     grid-template-columns: 1fr;
@@ -55,19 +91,7 @@
     background: transparent;
     backdrop-filter: blur(10px);
   }
-}
-.elements {
-  color: #ddd;
-  padding: 25px;
-}
-.elements h1 {
-  color: #dddddd;
-  margin-bottom: 10px;
-  font-size: 23px;
-}
-.elements p {
-  color: #777;
-  line-height: 1.5;
-  font-size: 16px;
-  margin-bottom: 10px;
+  .elements {
+    padding: 35px;
+  }
 }
