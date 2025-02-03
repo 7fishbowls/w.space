@@ -42,7 +42,7 @@ export default function Menu({ children }) {
               <Link
                 href={href}
                 key={index}
-                style={{ background: active ? "#006fff" : "" }}
+                style={{ background: active ? "#353535" : "" }}
                 onClick={() => handleClick(index)}
               >
                 <Icon size={21} />
