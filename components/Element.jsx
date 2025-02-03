@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import { FaLink } from "react-icons/fa6";
 
 export default function Element({
@@ -6,10 +7,12 @@ export default function Element({
   element,
   setElements,
   id,
+  index,
   elements,
 }) {
   const [its_content, setItsContent] = useState(element.content);
   const [editing, setEditing] = useState(false);
+  const element_ref = useRef(null);
 
   const handleChange = (e) => {
     setItsContent(e.target.value);
@@ -17,29 +20,35 @@ export default function Element({
 
   const handleClick = () => {
     if (!editing) setEditing(true);
+    console.log(element_ref);
   };
 
   const handleSave = (e) => {
     let data = e.target.value.trim();
 
     if (!data) {
-      setElements(elements.filter((_, index) => index !== id));
+      setElements(elements.filter((elem) => elem._id !== id));
       setEditing(false);
       return;
     }
 
     if (element.type === "link") {
-      data = data.split(" ")[0]; // Extract only the first word if it's a link
+      data = data.split(" ")[0];
     }
 
     setItsContent(data);
     setElements((prev) => {
-      const newArray = [...prev];
-      newArray[id] = { ...newArray[id], content: data }; // Ensure immutability
-      return newArray;
+      prev[index] = { ...prev[index], content: data };
+      return [...prev];
     });
 
     setEditing(false);
+  };
+  const handleDelete = (e) => {
+    e.preventDefault();
+    setElements((prev) => {
+      return prev.filter((elem) => elem._id !== id);
+    });
   };
 
   return (
@@ -51,14 +60,35 @@ export default function Element({
         <p onClick={handleClick}>{its_content}</p>
       )}
       {element.type === "link" && !editing && (
-        <p onClick={handleClick}>
-          <FaLink className={styles.link_icon} color="#006fff" /> {its_content}
-        </p>
+        <div className={styles.link_box}>
+          <FaLink className={styles.link_icon} color="#006fff" />
+          <p onClick={handleClick} className={styles.link}>
+            {its_content}
+          </p>
+        </div>
+      )}
+      {element.type === "image" && !editing && (
+        <div className={styles.image_}>
+          <Image
+            onClick={handleClick}
+            alt={"Your Internet Sucks!"}
+            src={its_content}
+            fill
+          />
+        </div>
       )}
       {editing && (
         <textarea
           className={styles.edit_input}
           type="text"
+          style={{
+            height:
+              element.type === "heading"
+                ? "100px"
+                : element.type === "link"
+                ? "65px"
+                : "300px",
+          }}
           value={its_content}
           onChange={(e) => handleChange(e)}
           onBlur={(e) => handleSave(e)}

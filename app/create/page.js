@@ -27,20 +27,26 @@ export default function Create() {
           <FaAsterisk />
         </section>
       )}
-
       <section className={styles.elements}>
         {elements.map((elem, index) => (
           <Element
             styles={styles}
             element={elem}
-            key={index * 10}
-            id={index}
+            key={elem._id}
+            id={elem._id}
+            index={index}
             setElements={setElements}
             elements={elements}
           />
         ))}
       </section>
-      <ToolBox setElements={setElements} styles={styles} hide={hide} />
+
+      <ToolBox
+        setElements={setElements}
+        styles={styles}
+        hide={hide}
+        elements={elements}
+      />
     </>
   );
 }

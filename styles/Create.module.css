@@ -52,20 +52,27 @@
   color: #dddddd;
   margin-bottom: 15px;
   font-size: 23px;
+  cursor: crosshair;
 }
 .elements p {
   color: #777;
   line-height: 1.5;
   font-size: 16px;
+  cursor: crosshair;
   margin-bottom: 15px;
 }
-.elements h4 {
+.elements .link {
+  cursor: crosshair;
   color: #777;
+  text-decoration: underline;
   margin-bottom: 15px;
+}
+.link_box {
+  display: flex;
+  gap: 5px;
 }
 .link_icon {
-  margin-right: 5px;
-  transform: translateY(2px);
+  margin-top: 5px;
 }
 .edit_input {
   padding: 20px;
@@ -76,7 +83,6 @@
   outline: none;
   font-size: 16px;
   margin-bottom: 15px;
-  height: 300px;
   resize: none;
 }
 @media screen and (min-width: 768px) {
@@ -88,10 +94,23 @@
     transform: translateY(-50%);
     left: auto;
     width: 80px;
-    background: transparent;
-    backdrop-filter: blur(10px);
+    background: #0e0e0e;
   }
   .elements {
     padding: 35px;
   }
+}
+.image_ {
+  margin-bottom: 20px;
+  margin-top: 5px;
+  padding: 20px;
+  height: 300px;
+  max-width: 500px;
+  overflow: hidden;
+  position: relative;
+}
+.image_ img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
