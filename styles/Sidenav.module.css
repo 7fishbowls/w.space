@@ -1,0 +1,49 @@
+.menu {
+  display: grid;
+  grid-template-columns: 65px 1fr;
+}
+.menu .col_1 {
+  display: grid;
+
+  position: sticky;
+  top: 0;
+  left: 0;
+  grid-template-columns: 65px;
+  grid-template-rows: repeat(5, 65px);
+  background: #0e0e0e;
+  border-right: 1px solid var(--border-color);
+  height: 100vh;
+}
+.menu .col_1 h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color-2);
+  border-bottom: 1px solid var(--border-color);
+}
+.menu .col_1 a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+  color: var(--text-color-2);
+}
+.menu .col_1 a:hover {
+  background: #353535;
+  color: #dddddd;
+}
+.menu .col_2 input {
+  padding: 15px;
+  padding-left: 25px;
+  outline: none;
+  background: #0e0e0e;
+  border: none;
+  width: 100%;
+  height: 65px;
+  color: var(--text-color-2);
+  font-size: 1em;
+  border-bottom: 1px solid var(--border-color);
+}
+.activeLink {
+  background: #353535;
+}
