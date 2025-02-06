@@ -3,7 +3,7 @@
 import styles from "@/styles/Create.module.css";
 import ToolBox from "@/components/ToolBox";
 import { FaAsterisk } from "react-icons/fa6";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Element from "@/components/Element";
 export default function Create() {
   const [elements, setElements] = useState([]);

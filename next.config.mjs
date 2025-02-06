@@ -7,6 +7,12 @@ const nextConfig = {
         hostname: "cdn.esahubble.org",
         pathname: "/**",
       },
+
+      {
+        protocol: "https",
+        hostname: "images-assets.nasa.gov",
+        pathname: "/**",
+      },
     ],
   },
 };

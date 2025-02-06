@@ -5,6 +5,7 @@ import { FiPlus } from "react-icons/fi";
 import { PiBooksFill } from "react-icons/pi";
 import { IoMdHome } from "react-icons/io";
 import { usePathname } from "next/navigation";
+import SearchComponent from "./SearchComponent";
 
 export default function SideNavElement({ children }) {
   const pathname = usePathname();
@@ -49,7 +50,7 @@ export default function SideNavElement({ children }) {
         ))}
       </header>
       <section className={styles.col_2}>
-        <input type="text" placeholder="Search anything..." />
+        <SearchComponent styles={styles} />
         {children}
       </section>
     </section>

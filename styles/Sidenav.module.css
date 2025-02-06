@@ -47,3 +47,55 @@
 .activeLink {
   background: #353535;
 }
+.search_box {
+  position: relative;
+}
+.matched_elements {
+  background: #0e0e0e;
+  width: 100%;
+  display: grid;
+  position: absolute;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+.matched_elements a,
+.cant_find {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 17px;
+  height: 65px;
+  background: #0e0e0e;
+  display: flex;
+  padding-left: 20px;
+  border: 1px solid transparent;
+  align-items: center;
+}
+.matched_elements a:hover {
+  background: #353535;
+  border: 1px solid #4e4e4e;
+}
+@media screen and (max-width: 768px) {
+  .matched_elements {
+    grid-template-columns: 1fr;
+  }
+}
+.input_area {
+  display: grid;
+  grid-template-columns: 1fr 45px;
+}
+.input_area button {
+  padding: 10px;
+  padding-top: 15px;
+  border: none;
+  text-align: center;
+  font-size: 1.2em;
+  color: #ddd;
+  cursor: pointer;
+  background: #0e0e0e;
+  border-bottom: 1px solid #3a3a3a;
+}
+.input_area button:disabled {
+  color: #0e0e0e;
+  cursor: not-allowed;
+}

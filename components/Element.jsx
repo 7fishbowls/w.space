@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { FaLink } from "react-icons/fa6";
 
 export default function Element({
@@ -82,12 +82,7 @@ export default function Element({
           className={styles.edit_input}
           type="text"
           style={{
-            height:
-              element.type === "heading"
-                ? "100px"
-                : element.type === "link"
-                ? "65px"
-                : "300px",
+            height: element.type === "paragraph" ? "300px" : "65px",
           }}
           value={its_content}
           onChange={(e) => handleChange(e)}
