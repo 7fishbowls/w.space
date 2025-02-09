@@ -1,10 +1,12 @@
 import Link from "next/link";
 import styles from "@/styles/Sidenav.module.css";
 import { FaAsterisk, FaInstagram } from "react-icons/fa6";
-import { FiPlus } from "react-icons/fi";
+import { AiFillFolderAdd } from "react-icons/ai";
 import { PiBooksFill } from "react-icons/pi";
 import { IoMdHome } from "react-icons/io";
 import { usePathname } from "next/navigation";
+import { CgAddR } from "react-icons/cg";
+import { BsFillBookmarksFill } from "react-icons/bs";
 import SearchComponent from "./SearchComponent";
 
 export default function SideNavElement({ children }) {
@@ -22,8 +24,13 @@ export default function SideNavElement({ children }) {
       active: pathname.startsWith("/explore/research"),
     },
     {
+      href: "/explore/saved",
+      Icon: BsFillBookmarksFill,
+      active: pathname.startsWith("/explore/saved"),
+    },
+    {
       href: "/create",
-      Icon: FiPlus,
+      Icon: AiFillFolderAdd,
       active: pathname === "/create",
     },
     {

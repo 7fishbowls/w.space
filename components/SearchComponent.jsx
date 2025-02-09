@@ -116,6 +116,7 @@ export default function SearchComponent({ styles }) {
   const handleClear = () => {
     if (searchValue) {
       setSetValue("");
+      setElements([]);
     }
   };
 
@@ -152,7 +153,10 @@ export default function SearchComponent({ styles }) {
         </button>
       </div>
 
-      <div className={styles.matched_elements}>
+      <div
+        className={styles.matched_elements}
+        style={{ borderBottom: searchValue ? "1px solid #3a3a3a" : "none" }}
+      >
         {matchedElements.map((elem) => (
           <Link key={elem} href={`/explore/researches/${elem}`}>
             <IoSearch

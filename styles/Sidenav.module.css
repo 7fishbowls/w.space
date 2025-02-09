@@ -4,12 +4,11 @@
 }
 .menu .col_1 {
   display: grid;
-
   position: sticky;
   top: 0;
   left: 0;
   grid-template-columns: 65px;
-  grid-template-rows: repeat(5, 65px);
+  grid-template-rows: repeat(6, 65px);
   background: #0e0e0e;
   border-right: 1px solid var(--border-color);
   height: 100vh;
@@ -54,7 +53,7 @@
   background: #0e0e0e;
   width: 100%;
   display: grid;
-  position: absolute;
+  position: sticky;
   grid-template-columns: 1fr 1fr 1fr;
   max-height: 100vh;
   overflow-y: auto;
