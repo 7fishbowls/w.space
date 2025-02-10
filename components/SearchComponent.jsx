@@ -147,6 +147,7 @@ export default function SearchComponent({ styles }) {
           value={searchValue}
           onChange={handleChange}
           maxLength={15}
+          onBlur={handleClear}
         />
         <button onClick={handleClear} disabled={!searchValue}>
           <RxCross2 />
